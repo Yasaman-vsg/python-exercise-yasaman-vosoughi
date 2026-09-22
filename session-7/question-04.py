@@ -45,11 +45,11 @@ def chek_balance(transactions):
     balance={}
     froud_transactions=[]
     for i in transactions :
-        if i[1] not in balance:
+        if i[0] not in balance:
             balance[i[0]]=0
         if i[1]=='deposit':
             balance[i[0]]+=i[2]
-        elif i[0]=='withdraw':
+        elif i[1]=='withdraw':
             if i[2]>balance[i[0]]:
                 froud_transactions.append(i)
             else:
