@@ -27,7 +27,7 @@ def analyz_transaitions(transactions):
          
          if name not in dic1:
              dic1[name]={'deposit':0,
-                         'withdrawals':0,
+                         'withdraw':0,
                          'balanc_change':0,
                          'transactions':0}
          dic1[name]['transactions']+=1
@@ -35,16 +35,16 @@ def analyz_transaitions(transactions):
          if Type=='deposit':
              dic1[name]['deposit']+=amount
              dic1[name]['balanc_change']+=amount
-         if Type=='withdrawals':
+         if Type=='withdraw':
             
-             dic1[name]['withdrawals']+=amount
+             dic1[name]['withdraw']+=amount
              dic1[name]['balanc_change']-=amount
              
     for name in dic1:
         if dic1[name]['deposit']>max_deposit:
             max_deposit=dic1[name]['deposit']
-        if dic1[name]['withdrawals']>most_withdrawals:
-            most_withdrawals=dic1[name]['withdrawals']   
+        if dic1[name]['withdraw']>most_withdrawals:
+            most_withdrawals=dic1[name]['withdraw']   
          
         if dic1[name]['transactions']>most_active:
             most_active=dic1[name]['transactions']  
