@@ -5,7 +5,7 @@ Created on Sat Sep 26 03:39:43 2026
 @author: 10
 """
 
-users_txt='‪C://Users//10//Desktop//users_txt.txt'
+users_txt='C://Users//10//documents//python-exercise-yasaman-vosoughi//session-8//users_txt.txt'
 
 def add_user(username,password,status):
     with open(users_txt,'r')as file:
@@ -44,7 +44,7 @@ def delet_user(username):
                
             else:
                 file.write(line)
-                return ' user not found'
+               
             
         if found:
               return 'user deleted successfully'
@@ -69,7 +69,7 @@ def generat_report():
     
 print(add_user('mohamad',137786, 'bloked'))
 print(find_user('ali'))
-print(delet_user('Rzea'))
+print(delet_user('Reza'))
 print(generat_report())
         
         
