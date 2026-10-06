@@ -20,7 +20,7 @@ def add_uniqe(value,uniqe_list,position_list,position):
         return 'empty'
     duplicate=False
     for item in uniqe_list:
-        if value.lower==item.lower:
+        if value.lower()==item.lower():
             duplicate=True
             index=uniqe_list.index(item)
             first_position=position_list[index]
@@ -53,18 +53,22 @@ def process_values():
         position+=1
         if result=='new':
             unique_count+=1
-        else:
+        elif result[0]=='duplicate':
             duplicate_count+=1
-    return uniqe_list,unique_count,duplicate_count        
+    return uniqe_list,unique_count,duplicate_count ,position_list       
 def show_report():
     uniqe_list,uniqe_count,duplicate_count,position_list=process_values()
-      
+    print('========================================')  
     print('uniqe list:',uniqe_list)
+    print('_________')
     print ('len duplicate:',duplicate_count)
+    print('_________')
     print ('uniqe_count:',uniqe_count)
+    print('_________')
     print('first positions:')
     for i in range(len(uniqe_list)):
         print(uniqe_list[i],':',position_list[i])
+        
 show_report()    
     
     
